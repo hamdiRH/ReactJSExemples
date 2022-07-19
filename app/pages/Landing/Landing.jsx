@@ -7,7 +7,7 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
-import { Col, Row } from 'antd'
+import { Col, Row, Divider, Tag } from 'antd'
 import { FormattedMessage, useIntl, intlShape } from 'react-intl'
 import { Helmet } from 'react-helmet'
 import ReactLogo from 'assets/logo/react.png'
@@ -39,23 +39,36 @@ const Landing = ({ data, local }) => {
           content={helmetMessages.helmetContent}
         />
       </Helmet>
-      <div className="navbar px-10">
-        <div className="logo ">
-          <img src={ReactLogo} alt="logo" width={40} />
-          <h1>React JS Exemples</h1>
+      <div className="navbar ">
+        <div className="container">
+          <div className="logo ">
+            <img src={ReactLogo} alt="logo" width={40} />
+            <h1>React JS Exemples</h1>
+          </div>
         </div>
       </div>
-      <div className="px-10 mt-5">
-        <Row>
-          <Col span={16} className="border border-primary">
+      <div className="container mt-5">
+        <Row className="d-flex justify-content-between ">
+          <Col span={16} className="mx-2">
             <Card data={data} />
           </Col>
-          <Col span={8} className="border border-secondary">
-            col-12
+          <Col span={7} className="bg-white mx-1">
+            <h1 className="tags-title ">TAGS</h1>
+            <Divider className="divider-tag" />
+            <Row className="d-flex justify-content-between px-3">
+              <Col>
+                <strong className="font-weight-bold">Hooks</strong>
+              </Col>
+              <Col>
+                <Tag className="rounded-circle p-1" color="cyan">
+                  250
+                </Tag>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </div>
-      <FormattedMessage {...messages.header} />
+      {/* <FormattedMessage {...messages.header} /> */}
     </div>
   )
 }

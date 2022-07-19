@@ -8,7 +8,7 @@ import constants from './constants'
 
 export const initialState = {
   data: {
-    posts: [],
+    posts: constants.fakeData,
   },
   local: {
     loading: {},

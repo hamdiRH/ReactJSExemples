@@ -86,13 +86,6 @@ const mapDispatchToProps = {
 
 const withSaga = injectSaga({ key: 'profile', saga, mode: DAEMON })
 
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)
+const withConnect = connect(mapStateToProps, mapDispatchToProps)
 
-export default compose(
-  withConnect,
-  memo,
-  withSaga,
-)(App)
+export default compose(withConnect, memo, withSaga)(App)
