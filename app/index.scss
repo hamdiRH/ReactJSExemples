@@ -1,0 +1,16 @@
+// Variable overrides first
+$primary: #900;
+$enable-shadows: true;
+$prefix: 'mo-';
+
+// Then import Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.px-10 {
+  padding-left: ($spacer * 5.5) !important;
+  padding-right: ($spacer * 5.5) !important;
+}
+
+.mt-10 {
+  margin-top: ($spacer * 5.5) !important;
+}
