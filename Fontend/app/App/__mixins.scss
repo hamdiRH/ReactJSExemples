@@ -1,0 +1,13 @@
+@use "sass:math";
+
+@function calculateRem($size) {
+    $remSize: math.div($size, 16px);
+    @return #{$remSize}rem;
+  }
+  
+  @mixin fontSize($size) {
+    font-size: $size ; //Fallback in px
+    font-size: calculateRem($size) ;
+  }
+
+  // to use the mixin just import this file by " @import "__mixins.scss";" in the scss file then use the mixin by replacing the "font-size : Xpx;" by "@include  fontSize(Xpx);"
